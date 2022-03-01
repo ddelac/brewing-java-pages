@@ -1,1 +1,51 @@
-<h1>Problem Statement</h1>
+<h1><strong>Brewing Java Problem Statement</strong></h1>
+<hr>
+<h4><strong>Name of Game:</strong></h4>
+<ul>
+<li>TBA</li>
+</ul>
+<hr>
+<h4><strong>Type of Game:</strong></h4>
+<ul>
+<li>A space shooter game where the player moves up, down, left, and right while the enemies spawn from the top and fall towards the player. If the enemies get to the bottom, they will respawn at the top of the screen at a new random location on the x-axis.</li>
+</ul>
+<hr>
+<h4><strong>Requirements for Completion:</strong></h4>
+<ol>
+<li>Levels</li>
+<li>Bosses</li>
+<li>Combat System (lasers)</li>
+<li>Enemies</li>
+<li>Powerups &amp; De-buffs</li>
+<li>Difficulty Levels</li>
+<li>Score</li>
+</ol>
+<h5><strong>Levels:</strong></h5>
+<ul>
+<li>The game will have a certain number of levels (amount to be determined later). The player will have a certain number of lives per level (amount to be determined later). As the difficulty of the level increases, the life respawning will cease at the beginning of each new game level. The player will be required to beat all spawned enemies and bosses to pass the game level. The player will move on to the next level once the boss of each level is defeated.</li>
+</ul>
+<h5><strong>Boses:</strong></h5>
+<ul>
+<li>There will be one boss per level. The boss will have its sprite and moves list. The bosses will also spawn mini-bosses as part of the boss fight. Each boss will have its specific location hardcoded in the game.</li>
+</ul>
+<h5><strong>Combat Systems (Lasers):</strong></h5>
+<ul>
+<li>The combat system will be a laser fired from the player ship. When the player presses the proper key (default shoot key: spacebar) one laser will shoot from the ship. There will also be a fire rate system to stop the player from just spamming the shoot key or setting up a macro to press the button for them. The laser, once fired, will travel straight forward at a constant rate.</li>
+</ul>
+<h5><strong>Enemies:</strong></h5>
+<ul>
+<li>There will be four (4) types of enemies within the game. The most likely to spawn and weakest will be the <strong>scrub/regular enemy</strong>. The next strongest enemy will be the <strong>captain</strong>, who will move and shoot faster than the scrub/regular enemy. Next is the <strong>mini-boss</strong>, who will be spawned either before the boss fight or during the boss fight (who is stronger than the captain). The most powerful enemy is the <strong>boss</strong>, with the most health and offensive capabilities of the four (4) enemy types. All enemies, except the boss, can be spawned randomly throughout the level and must be defeated to move to the next level.</li>
+</ul>
+<h5><strong>Powerups and De-buffs:</strong></h5>
+<ul>
+<li>There will be up to five (5) different powerups/de-buffs based on the difficulty chosen by the player. All difficulty levels will include the <strong>Multi-shot, Shield, and Add Life powerups</strong>. Game levels will also incorporate the <strong>Fire rate down de-buff</strong>. As game level difficulty increases, the will be a <strong>remove one (1) life de-buff</strong>. The <strong>Multi-shot powerup</strong> will make the ship shoot three (3) lasers instead of one (1) laser per shoot key pressed. The <strong>shield</strong> will allow the player to get hit once by an enemy attack without losing a life. The <strong>Add Life powerup</strong> will add one life to the players' life count. Higher difficulty levels may include a <strong>max life count</strong> to prevent the player from stocking up on them using this buff. The <strong>Fire rate down de-buff</strong> slows the rate at which the player can shoot a laser. The <strong>Remove life de-buff</strong> will take one (1) life from the players' life count. This de-buff will only be actively spawning in the high difficulty levels.</li>
+</ul>
+<h5><strong>Difficulty Levels:</strong></h5>
+<ul>
+<li>There will be at least three (3) difficulty levels. <strong>Easy, Medium, and Hard</strong>. This may change as we get further along in the game development.</li>
+</ul>
+<h5><strong>Score:</strong></h5>
+<ul>
+<li>Each kill on an enemy will gain the player points displayed on the screen. Each type of enemy will have a different number of points allocated to them.</li>
+<li><em>If time allows, we will implement a way of saving the scores and comparing them with others.</em></li>
+</ul>
