@@ -1,1 +1,50 @@
-<h1> Architecture</h1>
+<h1>Brewing Java Architecture</h1>
+<hr>
+<h4><strong>Project Overview:</strong></h4>
+<ul>
+<li>The game is designe to be a Galaga-type game</li>
+<li><strong>Movement:</strong> Left, Right, Front, and Back.</li>
+<li>There will be a repository of different enemies and levels.</li>
+<li>The game will also include different power-ups.</li>
+</ul>
+<hr>
+<h4><strong>Key Architectural Drivers:</strong></h4>
+<ul>
+<li>Access to files without changing core files.</li>
+<li>Simutaneous Access</li>
+<li>Easy Testing</li>
+<li>Sharing data/limit data access.</li>
+</ul>
+<hr>
+<h4><strong>Architectural Style Choices:</strong></h4>
+<h5><strong>REPOSITORIES</strong></h5>
+<ul>
+<li>Allows quick file sharing</li>
+<li>Openness</li>
+<li>Central data store</li>
+<li>Strict data format</li>
+</ul>
+<h5><strong>PUBLISH-SUBSCRIBE</strong></h5>
+<ul>
+<li>More difficult to test</li>
+<li>Publishers and subscribers</li>
+<li>Shared Repositories.</li>
+</ul>
+<h5><strong>Final Choice:</strong> Repositories</h5>
+<hr>
+<h4><strong>Architecture:</strong></h4>
+<ul>
+<li>image</li>
+</ul>
+<hr>
+<h4><strong>Conclusion:</strong></h4>
+<ul>
+<li>Risks associated with our choice <em>Repositories</em>:
+<ul>
+<li>Corruptio/hacking/accidental deletion</li>
+<li>Multiple branches</li>
+<li>Lack of internet</li>
+<li>Data format/File type</li>
+</ul>
+</li>
+</ul>
