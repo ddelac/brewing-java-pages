@@ -1,1 +1,159 @@
-<h1>Requirements</h1>
+<h1>Requirement Specifications for SpaceShooter</h1>
+<hr>
+<ol>
+<li>
+<h4><strong>Introduction:</strong></h4>
+</li>
+</ol>
+<ul>
+<li>
+<h5><strong>Purpose:</strong></h5>
+<ul>
+<li>The purpose of SpaceShooter is to provide a simple yet fun game for our users to play. The game will allow users to access a fun little game that they can play for just a few minutes or many hours.</li>
+</ul>
+</li>
+<li>
+<h4><strong>Scope:</strong></h4>
+<ul>
+<li>SpaceShooter will include at least four levels, each game level with its boss battle, an endless enemy mode with a scoring system, an opening menu, and a pause menu.</li>
+</ul>
+</li>
+<li>
+<h4><strong>Acronyms, Abbreviations, Definitions</strong></h4>
+<ul>
+<li>Co-op: a game mode that allows more than one person to play simultaneously and work together as teammates to complete the level objectives.</li>
+<li>OS: operating system</li>
+</ul>
+</li>
+<li>
+<h4><strong>References:</strong></h4>
+</li>
+</ul>
+<hr>
+<ol start="2">
+<li>
+<h4><strong>General Description of Product:</strong></h4>
+</li>
+</ol>
+<p>SpaceShooter is a 2D, top-down shooting game. The player is a spaceship with simple movements: forward, backward, left, and right. There are four different enemies: the scrub(weakest), captain, mini-boss, boss(strongest). Choose between the levels with special boss battles or the endless enemy mode.</p>
+<ul>
+<li>
+<h5><strong>Context:</strong></h5>
+<ul>
+<li>This game will be available on macOS, Windows, and Linux. The game is created in the Unity engine.</li>
+</ul>
+</li>
+<li>
+<h5><strong>Domain Model with Description:</strong></h5>
+<ul>
+<li>Unity 2020.3.29f1</li>
+</ul>
+</li>
+<li>
+<h5><strong>Product Function:</strong></h5>
+<ul>
+<li><strong>Game Levels:</strong> The game will have a certain number of levels(amount to be determined). The player will have a certain number of lives per level(amount to be determined). As the difficulty of the levels increases, the respawning of lives at the beginning of each game level will stop. It will be required to beat all the spawned enemies and a boss to move on to the next level.</li>
+<li><strong>Bosses:</strong> There will be one boss per level. Each boss will have its sprite, list of moves, and specific location hardcoded in the game. They will also spawn mini-bosses as part of the fight.</li>
+<li><strong>Combat Systems(Lasers):</strong> The combat system will be a laser fired from the player ship. When the player presses the proper key(default shoot key: spacebar) lasers will shoot. A fire rate system will be added to stop players from spamming the shoot key or setting up a macro to press the button for them. The laser, once fired, will travel straight forward at a constant rate.</li>
+<li><strong>Enemies:</strong> There will be four types of enemies within the game. The most likely to spawn and weakest will be the scrub/regular enemy. The next strongest enemy will be the captain. This enemy will move and shoot faster than the scrub/regular enemy. Next is the mini-boss, who will be spawned before or during the boss fight and will be as strong or stronger than the captain. The most powerful enemy is the boss. The boss will be the hardest enemy to beat, with the most health and offensive capabilities. All enemies, except the boss, can be spawned randomly throughout the level, and all enemies must be defeated to move to the next level.</li>
+<li><strong>Powerups and Debuffs:</strong> There will be up to 5 different powerups/debuffs based on the difficulty chosen by the player. In all difficulty levels, there will be: the Multishot, Shield, Add Life powerups, and the Firerate down debuff. As the difficulty increases the will be a Remove One life debuff. The Multishot powerup will make the ship shoot three lasers instead of one laser per shoot key pressed. The shield will allow the player to get hit once by an enemy attack without losing a life. The Add Life powerup will add one life to the player's life count. In higher difficulty levels, we add a max life count so that the player cannot stock up on them using this buff. The Firerate down debuff slows the rate the player can shoot a laser. The Remove life debuff will take one life from the player's life count. This debuff will only be actively spawning in the high difficulty levels.</li>
+<li><strong>Difficulty Levels:</strong> There will be at least three difficulty levels. Easy, Medium, and Hard. This design may change as we get further along in the game development.</li>
+<li><strong>Score:</strong> Each kill on an enemy will gain the player points displayed on the screen. Each type of enemy will have a different number of points alloted to them. If time permits, we will implement a way of saving the scores and comparing them with others.</li>
+</ul>
+</li>
+<li>
+<h5><strong>User Characteristics and Expectations:</strong></h5>
+<ul>
+<li>Users of this game are gamers who want to do some simple gaming without thinking too hard. The game is very straightforward and does not require a lot of different input from the user.</li>
+</ul>
+</li>
+<li>
+<h5><strong>Constraints:</strong></h5>
+<ul>
+<li>This games system does not allow for online play. This game is strictly played by yourself (or with a friend if co-op is added). The high score will only reference a specific user's high score and not all users' scores.</li>
+</ul>
+</li>
+<li>
+<h5><strong>Assumptions and Dependancies:</strong></h5>
+<ul>
+<li>Unity to run the game</li>
+<li>For WebGL build, access to the internet is needed.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ol start="3">
+<li>
+<h4><strong>Functional Requirements:</strong></h4>
+</li>
+</ol>
+<ul>
+<li>
+<h5><strong>C# scripts to control objects</strong></h5>
+</li>
+<li>
+<h5><strong>Sprites to create the player, enemies, lasers, and other interactable objects</strong></h5>
+</li>
+<li>
+<h5><strong>Particle effects of explosions</strong></h5>
+</li>
+<li>
+<h5><strong>Audio for explosions and shooting</strong></h5>
+</li>
+<li>
+<h5><strong>Animations</strong></h5>
+</li>
+<li>
+<h5><strong><a href="https://ddelac.github.io/brewing-java-pages/userstories.html">User Stories</a></strong></h5>
+</li>
+</ul>
+<hr>
+<ol start="4">
+<li>
+<h5><strong>System and Non-functional Requirements</strong></h5>
+</li>
+</ol>
+<ul>
+<li>
+<h5><strong>External Interface Requirements</strong></h5>
+<ul>
+<li>macOS High Sierra 10.13 or later</li>
+<li>Windows 10 or later</li>
+<li>Ubuntu 18.04 or Later</li>
+</ul>
+</li>
+<li>
+<h5><strong>Perfomance Requirements:</strong></h5>
+<ul>
+<li>CPU: SSE2 instruction set support</li>
+<li>Graphics card:
+<ul>
+<li>Windows &amp; Mac: at least DX10(shader model 4.0) capabilities</li>
+<li>Linux: OpenGL 3.2 or later, Vulkan Capable- Central data store</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h5><strong>Design Constraints:</strong></h5>
+<ul>
+<li>No server for creating online competition or online co-op is needed.</li>
+</ul>
+</li>
+<li>
+<h5><strong>Quality Requirements:</strong></h5>
+<ul>
+<li>A simple, free game that is functional and does not crash mid-run.</li>
+</ul>
+</li>
+<li>
+<h5><strong>Other Requirements:</strong></h5>
+<ul>
+<li>Appendices:
+<ul>
+<li><a href="https://docs.unity3d.com/Manual/system-requirements.html">Unity Manual</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
