@@ -1,1 +1,154 @@
-<h1>Design Document</h1>
+<h1>Brewing Java Design Document</h1>
+<hr>
+<ol>
+<li>
+<h4><strong>Design:</strong></h4>
+</li>
+</ol>
+<ul>
+<li>Our system consists of a unity-based game. The game is separated into different levels. We accomplish this separation of game levels by utilizing the different scenes in unity. To connect all these scenes there are classes that every scene could use. For example, a player class that controls everything relating to the player. The spawn of the enemies and powerups is up to anyone’s discretion working in that specific level, meaning that these scripts will vary between game levels. To go from level to level there is a separate main menu script that will have buttons to select the different levels. These buttons will be objects that will load in the specified scene.</li>
+</ul>
+<hr>
+<p><em>Image</em></p>
+<ol start="2">
+<li>
+<h4><strong>Descprition:</strong></h4>
+</li>
+</ol>
+<ul>
+<li>There is a central shared database with all game files which each team member can work from. Once a team member adds files they can push them to the repository, and all other team members can pull the changes without affecting their already existing files.</li>
+</ul>
+<hr>
+<ol start="3">
+<li><strong>Player class (controls everything dealing with the player)[Main class that sub classes call frequently]</strong></li>
+</ol>
+<ul>
+<li>Void Movement()
+<ul>
+<li>Controls the different movement of player in x and y axis</li>
+</ul>
+</li>
+<li>Void shooting()
+<ul>
+<li>Controls the creation of laser object</li>
+</ul>
+</li>
+<li>public void Damage()
+<ul>
+<li>registers if player is hit and updates necessary textures</li>
+</ul>
+</li>
+<li>public void onTripleShotCollection()
+<ul>
+<li>registers if triple shot is collected</li>
+</ul>
+</li>
+<li>IEnumerator TripleShotPowerDown()
+<ul>
+<li>allows power up to be enabled for n amount of time</li>
+</ul>
+</li>
+<li>public void onSpeedBoostCollection()
+<ul>
+<li>registers if speed boost is collected</li>
+</ul>
+</li>
+<li>IEnumerator SpeedBoostPowerDown()
+<ul>
+<li>allows power up to be enabled for n amount of time</li>
+</ul>
+</li>
+<li>public void onShieldCollection()
+<ul>
+<li>registers if shield is collected and updates necessary textures</li>
+</ul>
+</li>
+<li>public void addlife()
+<ul>
+<li>registers if life powerup is collected and updates necessary textures</li>
+</ul>
+</li>
+<li>public void addScore(int points)
+<ul>
+<li>adds score to scoreboard and updates UI.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ol start="4">
+<li><strong>Spawn Manager class(controls every spawn of enemies and powerups)[parent class]</strong></li>
+</ol>
+<ul>
+<li>public void StartSpawning()
+<ul>
+<li>controls the spawning of all different enemies and powerups</li>
+</ul>
+</li>
+<li>IEnumerator SpawnEnemyRoutine()
+<ul>
+<li>Routine for spawning enemies in a random basis of range of min and max time in seconds.</li>
+</ul>
+</li>
+<li>IEnumerator SpawnPowerUpRoutine()
+<ul>
+<li>Routine for spawning power ups in a random basis of range of min and max time in seconds.</li>
+</ul>
+</li>
+<li>public void onPlayerDeath()
+<ul>
+<li>stop spawning if player dies</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ol start="5">
+<li><strong>Powerup class (controls the behavior of all powerups)[sub-class]</strong></li>
+</ol>
+<ul>
+<li>void Start()
+<ul>
+<li>starts immediately to search for player game object and corresponding script</li>
+</ul>
+</li>
+<li>void Update()
+<ul>
+<li>updates every frame and contains movement function</li>
+</ul>
+</li>
+<li>void powerupMovement()
+<ul>
+<li>dictates the movement of the powerups</li>
+</ul>
+</li>
+<li>private void OnTriggerEnter2D(Collider2D other)
+<ul>
+<li>On collection/collision of powerup call appropriate function from player class</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ol start="6">
+<li><strong>Enemy class(controls the behavior of enemies, every enemy will have a different class associated with it)[sub-class]</strong></li>
+</ol>
+<ul>
+<li>void Start()
+<ul>
+<li>starts immediately to make sure all components and game objects are set correctly or else it displays log error</li>
+</ul>
+</li>
+<li>void Update()
+<ul>
+<li>updates every frame and contains movement function</li>
+</ul>
+</li>
+<li>void EnemyMovement()
+<ul>
+<li>dictates the enemy movement</li>
+</ul>
+</li>
+<li>private void OnTriggerEnter2D(Collider2D other)
+<ul>
+<li>checks if enemy is hit with laser object or player object. If collision with player call player damage function. If destroyed with laser call add score from player class and destroy object.</li>
+</ul>
+</li>
+</ul>
