@@ -1,1 +1,144 @@
-<h1>Test Report</h1>
+<h1>Brewing Java Test Document</h1>
+<hr>
+<h4><strong>Component Testing:</strong></h4>
+<ul>
+<li>Our component testing came down to testing the different components in each level/scene we developed.</li>
+</ul>
+<hr>
+<h4><strong>Enemy Testing:</strong></h4>
+<ul>
+<li>
+<p>Region Detection:</p>
+<ul>
+<li>We want to make sure that spawn regions are tested, making sure that the enemy is always in the frame; if the enemy leaves the frame, then destroy that object to eliminate any lag that would occur from having too many entities in the game.</li>
+</ul>
+</li>
+<li>
+<p>Collision Detection:</p>
+<ul>
+<li>Collision detection for enemies does not simply imply with the enemies, but with anything associated with them like lasers that they would shoot; we checked this to make sure everything is registered in-game: from a collision with enemies to being hit with a laser.</li>
+</ul>
+</li>
+<li>
+<p>Movement/Behavior:</p>
+<ul>
+<li>Ensure enemy movement is as intended and the behavior does not change unexpectedly.</li>
+</ul>
+</li>
+<li>
+<p>Randomness:</p>
+<ul>
+<li>Check if enemy spawning is random every single time.</li>
+</ul>
+</li>
+<li>
+<p>How will the test be run?</p>
+<ul>
+<li>The enemy tests will be conducted by only having that enemy spawn at a slower speed than usual so the movement and behavior are easy to follow, and it will be easy to test for the region and collision detection. Unity does have some tools for this like the scene manager which allows us to see a wider area of the scene to make it easy for us to make sure no enemies are spawning outside the game area. As for randomness, we will have to play and annotate what enemies spawn to ensure we are not getting the same patterns.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4><strong>Player Testing:</strong></h4>
+<ul>
+<li>
+<p>Region Detection:</p>
+<ul>
+<li>Make sure the player is always on screen to avoid any off-screen activity. The player can wrap around the game screen.</li>
+</ul>
+</li>
+<li>
+<p>Movement:</p>
+<ul>
+<li>Make sure the player does not get stuck anywhere, and that the movement is smooth. This ensures that the player has control over it.</li>
+</ul>
+</li>
+<li>
+<p>Shooting/Collision:</p>
+<ul>
+<li>Ensure every ammo type is shootable, and every collision is detected appropriately. Actions according to what happens.</li>
+</ul>
+</li>
+<li>
+<p>How will the test be run?</p>
+<ul>
+<li>Player tests will be conducted with no enemies at first to make sure movement and region detection are as expected later on we will add each enemy one per test to make sure collisions and point collection are perfect. We will make use of some unity tools like the scene and stats tool.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4><strong>PowerUps Testing:</strong></h4>
+<ul>
+<li>
+<p>Movement:</p>
+<ul>
+<li>Make sure movement is not too fast and that powerup falls straight down</li>
+</ul>
+</li>
+<li>
+<p>Collection:</p>
+<ul>
+<li>Make sure powerup is collected as collision with player happens. Make sure powerup activates its unique ability.</li>
+</ul>
+</li>
+<li>
+<p>How will the test be run?</p>
+<ul>
+<li>Testing will consist of only spawning one kind of powerup at a time and making sure that the collision happens and that player is awarded ability accordingly.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4><strong>System Testing (UI Testing):</strong></h4>
+<ul>
+<li>
+<p>Game Stats:</p>
+<ul>
+<li>Check for correct representation of points, time, and lives.</li>
+</ul>
+</li>
+<li>
+<p>Menus:</p>
+<ul>
+<li>Make sure menus pause the game and continue the game from the appropriate point.</li>
+<li>Make sure buttons are mapped to appropriate functions, and those functions work.</li>
+</ul>
+</li>
+<li>
+<p>Level Selector:</p>
+<ul>
+<li>Make sure buttons work and correspond to appropriate levels. Make sure you can go back to this screen when done with the game.</li>
+</ul>
+</li>
+<li>
+<p>How will the test be run?</p>
+<ul>
+<li>To do this test, the game will be slowed down and run through all different enemies to ensure every enemy. A collision means a life is taken away, and the correct score is added only if the enemy was killed by the player. The level will be completed, and the time will be double-checked with an actual timer. All the different menus and buttons will be tested by testing all the different combinations and paths that those buttons would lead to.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4><strong>Acceptance Testing (User Stories):</strong></h4>
+<ul>
+<li>
+<p>Speedrunner:</p>
+<ul>
+<li>Gameplay, the game should be played as much as possible, checking for uniqueness every time and checking for any bugs that may occur. At the end of every game double-check that score is saved and is accurate. Time and ranking should also be correct.</li>
+<li><em>We are already testing for all major aspects a speedrunner is interested in like time per level, score, and any bugs that would cause any game runs to end due to game problems. We are also making sure every time we play the game it is unique for everyone to have a fair competitive field.</em></li>
+</ul>
+</li>
+<li>
+<p>Competitive:</p>
+<ul>
+<li>Run through the game multiple times with different scores. Write each score down on a piece of paper. Put the written scores in order from most to least. Finally, check the written list against the rank/scoreboard.</li>
+<li><em>We are testing for bugs and eliminating them as well as an accurate scoring system that competitive players tend to care about the most. We are also making sure the game has zero bugs so no game error causes the player to lose.</em></li>
+</ul>
+</li>
+<li>
+<p>Casual:</p>
+<ul>
+<li>Testing for bugs and glitches throughout the gameplay.</li>
+<li><em>We are testing for bugs to improve user usability and to make a fun gaming experience, especially with unique levels each time you play.</em></li>
+</ul>
+</li>
+</ul>
